@@ -1,0 +1,27 @@
+[
+    {
+      "login_id": "BryanLoveCats",
+      "password_id": "CatsForLife",
+      "description": "Young men who loves coding about Cats",
+      "date_created": "2023-03-05"
+    },
+    {
+        "login_id": "ChengHaoBeastModeActivated",
+        "password_id": "TwistedBeast",
+        "description": "Work hard, Play hard",
+        "date_created": "2023-03-05"
+    },    
+    {
+        "login_id": "DhruvTheResponsiveRenegade",
+        "password_id": "NothingcanStopMe",
+        "description": "Fearlessly crushing any bugs or design flaws in their path",
+        "date_created": "2023-03-05"
+    },    
+    {
+        "login_id": "Chris-Butter-Anchovy-SalsaVerde",
+        "password_id": "YUMYUMYUM",
+        "description": "Can't stop, won't stop eating",
+        "date_created": "2023-03-05"
+    }
+  ]
+  

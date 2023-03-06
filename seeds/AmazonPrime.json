@@ -1,0 +1,27 @@
+[
+    {
+        "login_id": "PixelPusherPat",
+        "password_id": "DesignIsMyPassion",
+        "description": "Obsessed with perfecting every pixel of their designs",
+        "date_created": "2023-03-06"
+    },
+    {
+        "login_id": "GamingGuruGary",
+        "password_id": "LevelUpOrBust",
+        "description": "Devoted gamer with a competitive edge",
+        "date_created": "2023-03-06"
+    }, 
+    {
+        "login_id": "RubyOnRailsRachel",
+        "password_id": "CodeIsPoetry",
+        "description": "Poetic coder who sees beauty in every line of code",
+        "date_created": "2023-03-06"
+    },
+        
+    {
+        "login_id": "SushiSamantha",
+        "password_id": "RollMeAway",
+        "description": "Sushi lover with an insatiable appetite for new flavors",
+        "date_created": "2023-03-06"
+    }
+]
