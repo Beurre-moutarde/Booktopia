@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS booktopia_db;
-CREATE DATABASE booktopia_db;
+DROP DATABASE IF EXISTS SwapLogs_db;
+CREATE DATABASE SwapLogs_db;
