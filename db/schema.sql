@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS booktopia_db;
+CREATE DATABASE booktopia_db;
