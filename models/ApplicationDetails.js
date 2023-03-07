@@ -18,9 +18,6 @@ ApplicationDetails.init(
     Application_password: {
         type: DataTypes.STRING (200),
         allowNull: false,
-      },
-    description: {
-      type: DataTypes.STRING,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -29,13 +26,14 @@ ApplicationDetails.init(
         key: 'id',
       },
     },
-    Streaming_services_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'StreamingServices',
-        key: 'id',
-      },
-  },
+    Streaming_services: {
+      type: DataTypes.STRING (200),
+    },
+    In_use_by: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
+    },
   },
   {
     sequelize,
