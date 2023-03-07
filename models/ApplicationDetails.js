@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Application_details extends Model {}
+class ApplicationDetails extends Model {}
 
-Application_details.init(
+ApplicationDetails.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -29,14 +29,21 @@ Application_details.init(
         key: 'id',
       },
     },
+    Streaming_services_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'StreamingServices',
+        key: 'id',
+      },
+  },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Application_details',
+    modelName: 'ApplicationDetails',
   }
 );
 
-module.exports = Application_details;
+module.exports = ApplicationDetails;

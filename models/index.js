@@ -1,26 +1,23 @@
 const User = require('./User');
-const Netflix = require('./Netflix');
-const AmazonPrime = require('./AmazonPrime');
+const StreamingServices = require('./StreamingServices');
+const ApplicationDetails = require('./ApplicationDetails');
 
-User.hasOne(Netflix, {
+
+User.hasMany(ApplicationDetails, {
     foreignkey: 'user_id',
     onDelete: 'CASCADE'
 });
 
-User.hasOne(AmazonPrime, {
+Streaming_services.hasMany(ApplicationDetails, {
+    foreignKey: 'Application_details_id',
+    onDelete: 'CASCADE'
+});
+
+ApplicationDetails.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
-Netflix.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-});
 
-AmazonPrime.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-});
-
-module.exports = { User, Netflix, AmazonPrime };
+module.exports = { User, ApplicationDetails, StreamingServices };
 
