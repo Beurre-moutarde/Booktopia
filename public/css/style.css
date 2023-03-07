@@ -1,0 +1,36 @@
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px;
+background-color: #333;
+color: white;
+}
+
+h1 {
+    margin: 0;
+    }
+    
+.header-buttons {
+display: flex;
+gap: 10px;
+}
+
+button {
+padding: 10px 20px;
+border: none;
+background-color: #fff;
+color: #333;
+font-size: 16px;
+cursor: pointer;
+}
+
+.login-button {
+background-color: #ff8c00;
+color: white;
+}
+
+.signup-button {
+background-color: #008080;
+color: white;
+}
