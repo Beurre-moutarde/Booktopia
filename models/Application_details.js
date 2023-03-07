@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Netflix extends Model {}
+class Application_details extends Model {}
 
-Netflix.init(
+Application_details.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,21 +11,16 @@ Netflix.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    login_id: {
-      type: DataTypes.STRING,
+    Application_login: {
+      type: DataTypes.STRING (200),
       allowNull: false,
     },
-    password_id: {
-        type: DataTypes.STRING,
+    Application_password: {
+        type: DataTypes.STRING (200),
         allowNull: false,
       },
     description: {
       type: DataTypes.STRING,
-    },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -40,8 +35,8 @@ Netflix.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Netflix',
+    modelName: 'Application_details',
   }
 );
 
-module.exports = Netflix;
+module.exports = Application_details;
