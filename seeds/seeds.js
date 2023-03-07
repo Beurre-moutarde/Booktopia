@@ -1,6 +1,6 @@
 const sequelize = require('../config/connection');
-const { User, Netflix, AmazonPrime } = require('../models');
+const { User, ApplicationDetails, StreamingServices } = require('../models');
 
-const userData = require('./userData.json');
-const NetflixData = require('./NetflixData.json');
-const AmazonPrimeData = require('./AmazonPrimeData.json');
+const userData = require('./UserData.json');
+const ApplicationDetailsData = require('./ApplicationDetailsData.json');
+const StreamingServicesData = require('./StreamingServicesData.json');

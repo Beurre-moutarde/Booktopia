@@ -15,7 +15,7 @@ StreamingServices.init(
       types: DataTypes.STRING (10),
       allowNull: false
     },
-    application_details_id: {
+    applicationDetails_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'applicationDetails',
