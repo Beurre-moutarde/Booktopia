@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class StreamingServices extends Model {}
 
-Streaming_services.init(
+StreamingServices.init(
   {
     id: {
       type: DataTypes.INTEGER,
