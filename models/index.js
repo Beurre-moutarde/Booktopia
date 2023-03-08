@@ -8,16 +8,23 @@ User.hasMany(ApplicationDetails, {
     onDelete: 'CASCADE'
 });
 
+ApplicationDetails.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});    
+
 StreamingServices.hasMany(ApplicationDetails, {
-    foreignKey: 'application_details_id',
+    foreignKey: 'streaming_services_id',
     onDelete: 'CASCADE'
 });
 
 ApplicationDetails.hasOne(StreamingServices, {
-    foreignKey: 'application_details_id'
-})
-ApplicationDetails.belongsTo(User, {
-    foreignKey: 'user_id',
+    foreignKey: 'streaming_services_id',
+    onDelete: 'CASCADE'
+});
+
+StreamingServices.belongsTo(ApplicationDetails, {
+    foreignKey: 'applicationdetails_id',
     onDelete: 'CASCADE'
 });
 
