@@ -2,36 +2,34 @@ const router = require('express').Router();
 const { StreamingServices } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// This route is used to create a new Streaming service.
 router.post('/', withAuth, async (req, res) => {
     try {
-      const newStreamingServices = await StreamingServices.create({
-        ...req.body,
-        user_id: req.session.user_id,
+      const { name } = req.body;
+  
+      const newStreamingService = await StreamingService.create({
+        name,
       });
   
-      res.status(200).json(newStreamingServices);
+      res.status(201).json(newStreamingService);
     } catch (err) {
-      res.status(400).json(err);
+      res.status(400).json({ error: err.message });
     }
   });
 
-router.delete('/:id', withAuth, async (req, res) => {
+  // This route is used to delete a already existing Streaming service.
+  router.delete('/:id', withAuth, async (req, res) => {
     try {
-      const StreamingServicesData = await StreamingServices.destroy({
-        where: {
-          id: req.params.id,
-          user_id: req.session.user_id,
-        },
-      });
+      const streamingService = await StreamingService.findByPk(req.params.id);
   
-      if (!StreamingServicesData) {
-        res.status(404).json({ message: 'No Streaming Services found with this id!' });
-        return;
+      if (!streamingService) {
+        res.status(404).json({ error: 'Streaming service not found' });
+      } else {
+        await streamingService.destroy();
+        res.status(204).end();
       }
-  
-      res.status(200).json(StreamingServicesData);
     } catch (err) {
-      res.status(500).json(err);
+      res.status(400).json({ error: err.message });
     }
   });
   
