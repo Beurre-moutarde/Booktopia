@@ -10,7 +10,6 @@ User.hasMany(ApplicationDetails, {
 
 ApplicationDetails.belongsTo(User, {
     foreignKey: 'user_id',
-
 });
 
 
