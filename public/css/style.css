@@ -34,3 +34,14 @@ color: white;
 background-color: #008080;
 color: white;
 }
+
+.homepage-images {
+    text-align: center;
+  }
+  
+.homepage-images img {
+display: inline-block;
+margin-right: 10px;
+max-width: 25%;
+height: auto;
+}
