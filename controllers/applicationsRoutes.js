@@ -2,17 +2,12 @@ const router = require('express').Router();
 // const { User, StreamingServices, ApplicationDetails } = require('../models');
 // const withAuth = require('../utils/auth');
 
-
-//    /homepage route 
-router.get('/', (req, res) => {
+router.get('/,', (req, res) => {
     try {
-        res.render('homepage');
+        res.render('applicationDetails');
     } catch (err) {
         res.status(500).json(err);
     }
 });
-
-
-
 
 module.exports = router;
