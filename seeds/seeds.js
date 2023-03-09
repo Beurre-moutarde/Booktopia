@@ -1,5 +1,10 @@
 const sequelize = require('../config/connection');
 const { User, ApplicationDetails, StreamingServices } = require('../models');
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 9f09050c816f3e135896b5f88cca7a5e13297f99
 
 const userData = require('./UserData.json');
 const ApplicationDetailsData = require('./ApplicationDetailsData.json');
