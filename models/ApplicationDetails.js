@@ -36,7 +36,7 @@ ApplicationDetails.init(
     in_use_by: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: true 
+      defaultValue: false 
     },
     
   },

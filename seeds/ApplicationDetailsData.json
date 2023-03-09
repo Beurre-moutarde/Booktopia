@@ -1,11 +1,52 @@
 [
-    {
-       "application_login": "BryanLoveCats",
-       "application_password": "CatsForLife123",
-       "user_id": 1,
-       "streaming_services_id": 1,
-       "in_use_by": true
-    }
-
+   {
+      "application_login": "BryanLoveCats",
+      "application_password": "CatsForLife123",
+      "user_id": 1,
+      "streaming_services_id": 1,
+      "in_use_by": true
+   },
+  {
+      "application_login": "ChengHaoBeastModeActivated",
+      "application_password": "TwistedBeast123",
+      "user_id": 2,
+      "streaming_services_id": 2,
+      "in_use_by": true
+  },    
+  {
+      "application_login": "ChengHaoBeastModeActivated",
+      "application_password": "TwistedBeast345",
+      "user_id": 2,
+      "streaming_services_id": 4,
+      "in_use_by": true
+  },   
+  {
+      "application_login": "DhruvTheResponsiveRenegade",
+      "application_password": "NothingcanStopMe123",
+      "user_id": 3,
+      "streaming_services_id": 5,
+      "in_use_by": true
+  }, 
+  {
+      "application_login": "DhruvTheResponsiveRenegade",
+      "application_password": "NothingcanStopMe345",
+      "user_id": 3,
+      "streaming_services_id": 2,
+      "in_use_by": true
+  },
+  {
+      "application_login": "Chris-Butter-Anchovy-SalsaVerde",
+      "application_password": "YUMYUMYUM123",
+      "user_id": 4,
+      "streaming_services_id": 3,
+      "in_use_by": true
+  },
+  {
+      "application_login": "Chris-Butter-Anchovy-SalsaVerde",
+      "application_password": "YUMYUMYUM345",
+      "user_id": 4,
+      "streaming_services_id": 1,
+      "in_use_by": true
+  }
   ]
   
