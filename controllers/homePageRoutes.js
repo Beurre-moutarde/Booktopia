@@ -13,32 +13,28 @@ router.get('/', (req, res) => {
 });
 
 
-router.get('/signup', (req, res) => {
-    try{
+router.get('/signup', withAuth, async (req, res) => {
+    try {
         res.render('signup');
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-
-router.post('signup', async(req,res) =>{
+router.get('/login', withAuth, async (req, res) => {
     try {
-        const { name, email, password } = req.body;
-        const newUser = await User.create({
-            name,
-            email,
-            password
-          });
-          req.session.save(() => {
-            req.session.user_id = newUser.id;
-            req.session.logged_in = true;
-            res.status(200).json(newUser);
-          });
-    }catch (err) {
-        res.status(400).json(err);
+        res.render('login');
+    } catch (err) {
+        res.status(500).json(err);
     }
 });
 
-// application detail table update
-router.post()
+router.get('/website', withAuth, async (req, res) => {
+    try {
+        res.render('website');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+module.exports = router;

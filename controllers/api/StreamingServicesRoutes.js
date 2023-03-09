@@ -7,8 +7,9 @@ router.post('/', withAuth, async (req, res) => {
     try {
       const { name } = req.body;
   
-      const newStreamingService = await StreamingService.create({
+      const newStreamingService = await StreamingServices.create({
         name,
+        user_id: req.session.user_id,
       });
   
       res.status(201).json(newStreamingService);
@@ -20,7 +21,7 @@ router.post('/', withAuth, async (req, res) => {
   // This route is used to delete a already existing Streaming service.
   router.delete('/:id', withAuth, async (req, res) => {
     try {
-      const streamingService = await StreamingService.findByPk(req.params.id);
+      const streamingService = await StreamingServices.findByPk(req.params.id);
   
       if (!streamingService) {
         res.status(404).json({ error: 'Streaming service not found' });
