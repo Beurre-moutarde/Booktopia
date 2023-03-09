@@ -26,12 +26,14 @@ ApplicationDetails.init(
         key: 'id'
       },
     },
+
     streaming_services_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'streamingService',
         key: 'id'
       },
+
     },
     in_use_by: {
       type: DataTypes.BOOLEAN,

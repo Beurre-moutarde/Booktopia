@@ -13,7 +13,10 @@ StreamingServices.init(
     },
 
     name: {
+
       type: DataTypes.STRING,
+
+
       allowNull: false
     },
   },
@@ -22,7 +25,9 @@ StreamingServices.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
+
     modelName: 'streamingService'
+
   }
 );
 

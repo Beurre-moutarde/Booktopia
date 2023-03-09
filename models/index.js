@@ -10,13 +10,15 @@ User.hasMany(ApplicationDetails, {
 
 ApplicationDetails.belongsTo(User, {
     foreignKey: 'user_id',
+
 });
 
 
 StreamingServices.hasMany(ApplicationDetails, {
     foreignKey: 'streaming_services_id',
     onDelete: 'CASCADE'
-});
+});    
+
 
 ApplicationDetails.belongsTo(StreamingServices, {
     foreignKey: 'streaming_services_id',
