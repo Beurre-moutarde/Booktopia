@@ -16,7 +16,8 @@ ApplicationDetails.belongsTo(User, {
 StreamingServices.hasMany(ApplicationDetails, {
     foreignKey: 'streaming_services_id',
     onDelete: 'CASCADE'
-});
+});    
+
 
 ApplicationDetails.belongsTo(StreamingServices, {
     foreignKey: 'streaming_services_id',
