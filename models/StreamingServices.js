@@ -13,14 +13,7 @@ StreamingServices.init(
     },
 
     name: {
-<<<<<<< HEAD
       type: DataTypes.STRING,
-=======
-
-      type: DataTypes.STRING,
-
-
->>>>>>> 097894bd3d9e8c8c734309c57ee13a7ed57142ff
       allowNull: false
     },
   },
@@ -29,13 +22,7 @@ StreamingServices.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-<<<<<<< HEAD
     modelName: 'streamingService'
-=======
-
-    modelName: 'streamingService'
-
->>>>>>> 097894bd3d9e8c8c734309c57ee13a7ed57142ff
   }
 );
 
