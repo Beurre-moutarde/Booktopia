@@ -1,17 +1,3 @@
-**Group 5**
--
-**SwapLogs**
-
-This project is to create full-world full-stack application and we have decided to create a Password Sharing for online streaming service. The idea is to enable people to swap streaming services when they are not in use or to explore new content on another streaming service.
-
-Project Requirements
--
-- Use Node.js and Express.js to create a RESTful API.
-
-- Use Handlebars.js as the template engine.
-
-- Use MySQL and the Sequelize ORM for the database.
-
 - Have both GET and POST routes for retrieving and adding new data.
 
 - Use at least one new library, package, or technology that we haven’t discussed.
@@ -37,4 +23,33 @@ Project Requirements
 **User Story**
 - 
 ```md
-AS A Password Sharing 
+AS A Password swaplogs website between user online
+I WANT to be able to sign up to an account on the website / application
+SO THAT I can create a login profile
+GIVEN I want to swap logs, I am able to provide my own streaming logs into my user account
+I WILL be able to provide more than 1 streaming login 
+I WILL be able to provide my login to Disney+, Netflix, Spotify, Amazon Prime and HBO/Binge
+I CAN provide more than 1 streaming login
+ONCE I have provided my streaming login , I will be be able to search for the streaming login I want
+ONCE I have a match, I will be able to view the other user login
+WHEN I have accepted the other user login on a particular streaming service,
+THE USER login will no longer be searchable in the database
+UNTILL I disconnect it to go back to the database
+```
+
+**Other Reference Link**
+-
+A link to our initial wireframe
+https://miro.com/welcomeonboard/RU9IMlpBOFFvY2g3cjB2d2l5SWpZN0djSHJoU1h6b1k2UUNHWUVMRVI2UVZGTkVncmplM2pHbGJBTUVoWFRSeHwzNDU4NzY0NTQ4MDk4MTY2MDU5fDI=?share_link_id=950186769875
+
+
+**Credits & References/Resources**
+-
+- Website Credits - W3schools
+- Website Credits - StackOverFlow
+- Website Credits - Markdownguide.org
+
+This project is for Private use/learning classes and not for commerical or public consumption.Please get in contact if you wish to remove some of the refrences used.
+
+Thank you End..
+
