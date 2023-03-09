@@ -1,6 +1,24 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// Create new user
+router.post('/', async (req,res) => {
+    try {
+        const newUser = await User.create(req.body);
+
+        req.body.id = user_id.id;
+        req.body.name = user_id.name;
+        req.body.email = userd_id.email;
+        req.body.password = user_id.password;
+
+        res.status(200).json(newUser);
+      });
+    } catch (err) {
+        res.status(400).json(err);
+    }
+  });
+
+// Handles a user signup
 router.post('/', async (req, res) => {
     try {
       const userData = await User.create(req.body);
