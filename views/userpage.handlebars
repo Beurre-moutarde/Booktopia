@@ -62,21 +62,6 @@
         cursor: pointer;
         border-radius: 3px;
       }
-      
-      /* Style the action buttons */
-      .action-buttons {
-        display: flex;
-        justify-content: space-between;
-        margin: 20px;
-      }
-      .action-buttons button {
-        padding: 10px;
-        background: #ccc;
-        font-size: 17px;
-        border: none;
-        cursor: pointer;
-        border-radius: 3px;
-      }
     </style>
   </head>
   <body>
@@ -94,20 +79,29 @@
       <div class="user-profile">
         <h2>User Profile 1</h2>
         <p>{{user1.description}}</p>
+        <button class="approve-btn" onclick="approveUser(1)">Approve</button>
+        <button class="disconnect-btn" onclick="disconnectUser(1)">Disconnect</button>
       </div>
       
       <!-- User profile 2 -->
       <div class="user-profile">
         <h2>User Profile 2</h2>
         <p>{{user2.description}}</p>
+        <button class="approve-btn" onclick="approveUser(2)">Approve</button>
+        <button class="disconnect-btn" onclick="disconnectUser(2)">Disconnect</button>
       </div>
     </div>
     
-    <!-- Action buttons -->
-    <div class="action-buttons">
-      <button id="approve-button" disabled>Approve</button>
-      <button id="disconnect-button" disabled>Disconnect</button>
-    </div>
-    
     <!-- Login form -->
-    <div class="
+    <div class="login-form">
+      <h2>Login</h2>
+      <form action="/login" method="post">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+        
+        <button type="submit">Login</button>
+      </form>
+    </div>
