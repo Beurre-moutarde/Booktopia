@@ -11,8 +11,12 @@ StreamingServices.init(
       primaryKey: true,
       autoIncrement: true,
     },
+
     name: {
-      type: DataTypes.STRING (100),
+
+      type: DataTypes.STRING,
+
+
       allowNull: false
     },
   },
@@ -21,7 +25,9 @@ StreamingServices.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'StreamingServices',
+
+    modelName: 'streamingService'
+
   }
 );
 

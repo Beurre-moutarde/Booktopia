@@ -1,28 +1,30 @@
 const sequelize = require('../config/connection');
 const { User, ApplicationDetails, StreamingServices } = require('../models');
+// const User = require('../models/User');
+// const StreamingServices = require('../models/StreamingServices');
+// const ApplicationDetails = require('../models/ApplicationDetails');
+
 
 const userData = require('./UserData.json');
 const ApplicationDetailsData = require('./ApplicationDetailsData.json');
 const StreamingServicesData = require('./StreamingServicesData.json');
 
+
 const seedDatabase = async () => {
-    try {
     await sequelize.sync({ force: true });
   
-    const users = await User.bulkCreate(userData, {
+    await User.bulkCreate(userData, {
+
       individualHooks: true,
       returning: true,
     });
 
-    const applicationsDetails = await ApplicationDetails.bulkCreate(ApplicationDetailsData);
+    await StreamingServices.bulkCreate(StreamingServicesData);
 
-    const streamingServices = await StreamingServices.bulkCreate(StreamingServicesData);
+    await ApplicationDetails.bulkCreate(ApplicationDetailsData);
 
-  
     process.exit(0);
-  } catch (error) {
-    console.error('Error seeding database:', error);
-    process.exit(1);
-  }
   };
+  
+
   seedDatabase();

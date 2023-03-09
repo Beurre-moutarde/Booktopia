@@ -1,17 +1,25 @@
 [
     {
         "name": "Netflix"
+
+        
     },
     {
         "name": "DisneyPlus"
+        
     },
     {
         "name": "HBO"
+        
     },
     {
         "name": "AmazonPrime"
+        
     },
     {
         "name": "Spotify"
+        
+
     }
+    
 ]

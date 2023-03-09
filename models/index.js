@@ -10,24 +10,19 @@ User.hasMany(ApplicationDetails, {
 
 ApplicationDetails.belongsTo(User, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-});    
+
+});
+
 
 StreamingServices.hasMany(ApplicationDetails, {
     foreignKey: 'streaming_services_id',
     onDelete: 'CASCADE'
-});
+});    
 
-ApplicationDetails.hasOne(StreamingServices, {
+
+ApplicationDetails.belongsTo(StreamingServices, {
     foreignKey: 'streaming_services_id',
-    onDelete: 'CASCADE'
-});
-
-StreamingServices.belongsTo(ApplicationDetails, {
-    foreignKey: 'applicationdetails_id',
-    onDelete: 'CASCADE'
 });
 
 
 module.exports = { User, ApplicationDetails, StreamingServices };
-

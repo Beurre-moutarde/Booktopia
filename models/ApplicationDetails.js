@@ -11,40 +11,43 @@ ApplicationDetails.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    Application_login: {
-      type: DataTypes.STRING (200),
-      allowNull: false,
+    application_login: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    Application_password: {
-        type: DataTypes.STRING (200),
-        allowNull: false,
+    application_password: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id',
+        key: 'id'
       },
     },
-    Streaming_services_id: {
+
+    streaming_services_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "StreamingServices",
-        key: "id"
-      }
+        model: 'streamingService',
+        key: 'id'
+      },
+
     },
-    In_use_by: {
+    in_use_by: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      defaultValue: true,
+      defaultValue: true 
     },
+    
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'ApplicationDetails',
+    modelName: 'applicationDetails'
   }
 );
 
