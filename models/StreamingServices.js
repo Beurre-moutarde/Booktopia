@@ -11,24 +11,18 @@ StreamingServices.init(
       primaryKey: true,
       autoIncrement: true,
     },
+
     name: {
-      types: DataTypes.STRING (10),
+      type: DataTypes.STRING,
       allowNull: false
     },
-    applicationDetails_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'applicationDetails',
-        key: 'id',
-      },
-  },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Streaming_services',
+    modelName: 'streamingService'
   }
 );
 

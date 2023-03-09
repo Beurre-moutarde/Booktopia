@@ -1,67 +1,11 @@
 [
     {
-       "id": 1, 
-       "Application_login": "BryanLoveCats",
-       "Application_password": "CatsForLife123",
+       "application_login": "BryanLoveCats",
+       "application_password": "CatsForLife123",
        "user_id": 1,
-       "Streaming_services": "Netflix",
+       "streaming_services_id": 1,
        "in_use_by": true
-    },
-    {
-        "id": 2,
-        "Application_login": "BryanLoveCats",
-        "Application_password": "CatsForLife345",
-        "user_id": 1,
-        "Streaming_services": "HBO",
-        "in_use_by": true
-    },    
-    {
-        "id": 3,
-        "Application_login": "ChengHaoBeastModeActivated",
-        "Application_password": "TwistedBeast123",
-        "user_id": 2,
-        "Streaming_services": "DisneyPlus",
-        "in_use_by": true
-    },    
-    {
-        "id": 4,
-        "Application_login": "ChengHaoBeastModeActivated",
-        "Application_password": "TwistedBeast345",
-        "user_id": 2,
-        "Streaming_services": "AmazonPrime",
-        "in_use_by": true
-    },    
-    {
-        "id": 5,
-        "Application_login": "DhruvTheResponsiveRenegade",
-        "Application_password": "NothingcanStopMe123",
-        "user_id": 3,
-        "Streaming_services": "Spotify",
-        "in_use_by": true
-    },    
-    {
-        "id": 6,
-        "Application_login": "DhruvTheResponsiveRenegade",
-        "Application_password": "NothingcanStopMe345",
-        "user_id": 3,
-        "Streaming_services": "DisneyPlus",
-        "in_use_by": true
-    },
-    {
-        "id": 7,
-        "Application_login": "Chris-Butter-Anchovy-SalsaVerde",
-        "Application_password": "YUMYUMYUM123",
-        "user_id": 4,
-        "Streaming_services": "HBO",
-        "in_use_by": true
-    },
-    {
-        "id": 8,
-        "Application_login": "Chris-Butter-Anchovy-SalsaVerde",
-        "Application_password": "YUMYUMYUM345",
-        "user_id": 4,
-        "Streaming_services": "Netflix",
-        "in_use_by": true
     }
+
   ]
   

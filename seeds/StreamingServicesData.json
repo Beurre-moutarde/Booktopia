@@ -1,27 +1,22 @@
 [
     {
-        "id": 1,
-        "name": "Netflix",
-        "applicationDetails_id": "1, 8"
+        "name": "Netflix"
+        
     },
     {
-        "id": 2,
-        "name": "DisneyPlus",
-        "applicationDetails_id": "3, 6"
+        "name": "DisneyPlus"
+        
     },
     {
-        "id": 3,
-        "name": "HBO",
-        "applicationDetails_id": "2, 7"
+        "name": "HBO"
+        
     },
     {
-        "id": 1,
-        "name": "AmazonPrime",
-        "applicationDetails_id": "4"
+        "name": "AmazonPrime"
+        
     },
     {
-        "id": 1,
-        "name": "Spotify",
-        "applicationDetails_id": "5"
+        "name": "Spotify"
+        
     }
 ]

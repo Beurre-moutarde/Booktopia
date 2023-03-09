@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS SwapLogs_db;
-CREATE DATABASE SwapLogs_db;
+DROP DATABASE IF EXISTS swaplogs_db;
+CREATE DATABASE swaplogs_db;
