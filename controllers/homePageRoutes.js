@@ -3,7 +3,7 @@ const { User, StreamingServices, ApplicationDetails } = require('../models');
 const withAuth = require('../utils/auth');
 
 
-// homepage route 
+//    /homepage route 
 router.get('/', (req, res) => {
     try {
         res.render('homepage');
@@ -13,34 +13,32 @@ router.get('/', (req, res) => {
 });
 
 
-
-
-// Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
-    try {
-      // Find the logged in user based on the session ID
-      const userData = await User.findByPk(req.session.user_id, {
-        attributes: { exclude: ['password'] },
-        include: [{ model: Project }],
-      });
-  
-      const user = userData.get({ plain: true });
-  
-      res.render('profile', {
-        ...user,
-        logged_in: true
-      });
+router.get('/signup', (req, res) => {
+    try{
+        res.render('signup');
     } catch (err) {
-      res.status(500).json(err);
+        res.status(500).json(err);
     }
-  });
-  
-  router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/profile');
-      return;
+});
+
+
+router.post('signup', async(req,res) =>{
+    try {
+        const { name, email, password } = req.body;
+        const newUser = await User.create({
+            name,
+            email,
+            password
+          });
+          req.session.save(() => {
+            req.session.user_id = newUser.id;
+            req.session.logged_in = true;
+            res.status(200).json(newUser);
+          });
+    }catch (err) {
+        res.status(400).json(err);
     }
-  
-    res.render('login');
-  });
+});
+
+// application detail table update
+router.post()
