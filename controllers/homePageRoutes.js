@@ -30,21 +30,45 @@ router.get('/login', async (req, res) => {
 
 router.get('/profileMatching', withAuth, async (req, res) => {
     try {
-        const userData = await User.findByPk(req.session.user_id,{
-            attributes: { exclude: ['password'] },
+        // const userData = await User.findByPk(req.session.user_id,{
+        //     attributes: { exclude: ['password'] },
+        // });
+
+        const applicationDetails = await ApplicationDetails.findAll({
+            include: [
+                {
+                    model: StreamingServices,
+                    attributes: ['stream_name']
+                }
+            ],
+            // attributes: ['streaming_services_id'],
+            where: {user_id : 3}
         });
 
-        const streamingServices = await StreamingServices.findByPk(req.session.user_id,
-             {include:[{model: ApplicationDetails}]}
-        )
+        const userData = applicationDetails.map((details) => details.get({ plain: true }));
 
-        const user = userData.get({ plain: true });
-        const stream = streamingServices.get({plain: true});
+        // const userData = applicationDetails.get({ plain: true });
+        // const data = userData.get({plain: true});
+        
+  
         res.render('profileMatching',{
-            ...user,
-            ...stream,
+            data:userData,
             logged_in:true
         });
+
+
+
+        // const streamingServices = await StreamingServices.findByPk(req.session.user_id,
+        //      {include:[{model: ApplicationDetails}]}
+        // )
+
+        // const user = userData.get({ plain: true });
+        // const stream = streamingServices.get({plain: true});
+        // res.render('profileMatching',{
+        //     ...user,
+        //     ...stream,
+        //     logged_in:true
+        // });
 
     } catch (err) {
         res.status(500).json(err);
