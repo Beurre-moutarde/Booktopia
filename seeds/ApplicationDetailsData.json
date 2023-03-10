@@ -2,21 +2,21 @@
    {
       "application_login": "BryanLoveCats",
       "application_password": "CatsForLife123",
-      "user_id": 1,
+      "user_id": 2,
       "streaming_services_id": 1,
       "in_use_by": true
    },
   {
       "application_login": "ChengHaoBeastModeActivated",
       "application_password": "TwistedBeast123",
-      "user_id": 2,
+      "user_id": 1,
       "streaming_services_id": 2,
       "in_use_by": true
   },    
   {
       "application_login": "ChengHaoBeastModeActivated",
       "application_password": "TwistedBeast345",
-      "user_id": 2,
+      "user_id": 1,
       "streaming_services_id": 4,
       "in_use_by": true
   },   

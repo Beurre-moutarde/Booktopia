@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const UserRoutes = require('./UserRoutes');
-const StreamingServicesRoutes = require('./StreamingServicesRoutes');
-const ApplicationDetailsRoutes = require('./ApplicationDetailsRoutes');
+const userRoutes = require('./userRoutes');
+// const StreamingServicesRoutes = require('./StreamingServicesRoutes');
+const applicationDetailsRoutes = require('./applicationDetailsRoutes');
 
 
-router.use('/users', UserRoutes);
-router.use('/StreamingServices', StreamingServicesRoutes);
-router.use('/ApplicationDetails', ApplicationDetailsRoutes);
+router.use('/users', userRoutes);
+
+router.use('/applicationDetails', applicationDetailsRoutes);
 
 module.exports = router;
