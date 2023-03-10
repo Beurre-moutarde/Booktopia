@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const { User } = require('../models');
+const { User,  StreamingServices, ApplicationDetails } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -28,9 +28,24 @@ router.get('/login', async (req, res) => {
     }
   });
 
-router.get('/website', withAuth, async (req, res) => {
+router.get('/profileMatching', withAuth, async (req, res) => {
     try {
-        res.render('website');
+        const userData = await User.findByPk(req.session.user_id,{
+            attributes: { exclude: ['password'] },
+        });
+
+        const streamingServices = await StreamingServices.findByPk(req.session.user_id,
+             {include:[{model: ApplicationDetails}]}
+        )
+
+        const user = userData.get({ plain: true });
+        const stream = streamingServices.get({plain: true});
+        res.render('profileMatching',{
+            ...user,
+            ...stream,
+            logged_in:true
+        });
+
     } catch (err) {
         res.status(500).json(err);
     }
