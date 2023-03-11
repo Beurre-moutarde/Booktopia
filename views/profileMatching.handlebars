@@ -2,13 +2,13 @@
 
 <p>{{userData.message}}</p>
 
-You are sharing services:
+The services you are sharing:
 {{#each userData as |userData|}}
   <p> {{userData.streamingService.stream_name}}  </p>
 {{/each}}
 
 <form class="form start-sharing">
-    <button type="submit" class="btn btn-primary">Start Sharing</button>
+    <button type="submit" class="btn btn-primary">Sharing Services</button>
 </form>
 
 {{!-- ////////////// --}}

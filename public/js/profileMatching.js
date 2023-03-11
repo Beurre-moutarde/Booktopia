@@ -14,8 +14,10 @@ const selectPlatformFormHandler = async (event) => {
       body: JSON.stringify({ selectedPlatform }),
       headers: { 'Content-Type': 'application/json' },
     });
+    
     if(response.ok){
-
+      // console.log("sfsaf")
+      // console.log(response);
       const data = await response.json();
       console.log(data);
     }else{

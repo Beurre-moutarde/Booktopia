@@ -45,10 +45,9 @@ router.get('/profileMatching', withAuth, async (req, res) => {
         });
 
         const userData = applicationDetails.map((details) => details.get({ plain: true }));
-        //console.log(userData);
-        //res.json(userData);
+
         if (userData.length === 0){
-            const message = {message:'please share one service'};
+            const message = {message:'please share one service to get other services'};
             res.render('profileMatching',{
                 userData:message,
                 logged_in:true
