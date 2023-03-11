@@ -4,22 +4,23 @@ const { User } = require('../../models');
 // This route is used to create new user.
 router.post('/', async (req,res) => {
   try {
-      const { name, email, password } = req.body;
+    const { name, email, password } = req.body;
       
-      const newUser = await User.create({
-          name,
-          email,
-          password
-        });
-        req.session.save(() => {
-          req.session.user_id = newUser.id;
-          req.session.logged_in = true;
-          res.status(200).json(newUser);
-        });
-      } catch (err) {
-        res.status(400).json(err);
-      }
+    const newUser = await User.create({
+      name,
+      email,
+      password
     });
+    req.session.save(() => {
+      req.session.user_id = newUser.id;
+      req.session.logged_in = true;
+      res.status(200).json(newUser);
+    });
+    
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 // This route is used to log in a user by verifying their email and password against the stored values in the database.
 router.post('/login', async (req, res) => {
@@ -46,7 +47,7 @@ router.post('/login', async (req, res) => {
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
       req.session.destroy(() => {
-        res.status(204).end();
+      res.status(204).end();
       });
     } else {
       res.status(404).end();

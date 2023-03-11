@@ -18,7 +18,7 @@ router.get('/signup', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-  });
+});
 
 router.get('/login', async (req, res) => {
     try {
@@ -26,13 +26,12 @@ router.get('/login', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-  });
+});
 
 router.get('/profileMatching', withAuth, async (req, res) => {
     try {
         const applicationDetails = await ApplicationDetails.findAll({
-            // attributes: ['stream_name'],
-            where: {user_id : req.session.user_id},
+            where: {user_id: req.session.user_id},
             include: [
                 {
                     model: StreamingServices,
@@ -40,17 +39,33 @@ router.get('/profileMatching', withAuth, async (req, res) => {
                 }
             ],
         });
+    
         const userData = applicationDetails.map((details) => details.get({ plain: true }));
-        res.render('profileMatching',{
-            userData:userData,
-            logged_in:true
-        });
 
+        if (userData.length === 0){
+            const message = {message:'please share one service'};
+            res.render('profileMatching',{
+                userData:message,
+                logged_in:true
+            });
+        }else{
+            res.render('profileMatching',{
+                userData:userData,
+                logged_in:true
+            });
+        }
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
+router.get('/sharePage', withAuth, async(req,res) => {
+    try {
+        res.render('sharePage');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 
 module.exports = router;

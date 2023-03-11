@@ -1,7 +1,14 @@
 
-{{!-- 
-{{userData.message}} --}}
+
+<p>{{userData.message}}</p>
 
 {{#each userData as |userData|}}
-  <p> Stream Service: {{userData.streamingService.stream_name}}  </p>
+  <p> {{userData.streamingService.stream_name}}  </p>
 {{/each}}
+
+
+
+<form class="form start-sharing">
+    <button type="submit" class="btn btn-primary">Start Sharing</button>
+</form>
+<script src="/js/profileMatching.js"></script>

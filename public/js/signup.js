@@ -15,7 +15,7 @@ if (name && email && password) {
     });
 
     if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/profileMatching');
     } else {
         alert(response.statusText);
     }
