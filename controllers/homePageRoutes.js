@@ -35,13 +35,18 @@ router.get('/profileMatching', withAuth, async (req, res) => {
             include: [
                 {
                     model: StreamingServices,
-                    attributes: ['stream_name']
+                    attributes: ['stream_name'],
+                },
+                {
+                    model: User,
+                    attributes: ['name'],
                 }
             ],
         });
-    
-        const userData = applicationDetails.map((details) => details.get({ plain: true }));
 
+        const userData = applicationDetails.map((details) => details.get({ plain: true }));
+        //console.log(userData);
+        //res.json(userData);
         if (userData.length === 0){
             const message = {message:'please share one service'};
             res.render('profileMatching',{

@@ -1,14 +1,25 @@
-
+<p> Welcome, {{userData.[0].user.name}} </p>
 
 <p>{{userData.message}}</p>
 
+You are sharing services:
 {{#each userData as |userData|}}
   <p> {{userData.streamingService.stream_name}}  </p>
 {{/each}}
 
-
-
 <form class="form start-sharing">
     <button type="submit" class="btn btn-primary">Start Sharing</button>
 </form>
+
+{{!-- ////////////// --}}
+
+<form class="form select-platform">
+    <div class="form-group">
+        <label for="select-platform">Select Platform</label>
+        <input type="text" class="form-control" id="platform">
+    </div>
+    <button type="submit" class="btn btn-primary">Confirm</button>
+</form>
+
+
 <script src="/js/profileMatching.js"></script>

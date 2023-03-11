@@ -8,8 +8,8 @@ const submitServiceFormHandler = async (event) => {
     
     if (applicationLogin && applicationPassword && streamService) {
         //const user_id = 3;
-        console.log(JSON.stringify({ applicationLogin, applicationPassword,streamService,}));
-        //console.log('ddd');
+        //console.log(JSON.stringify({ applicationLogin, applicationPassword,streamService,}));
+        
         const response = await fetch('/api/sharePage/', {
         method: 'POST',
         body: JSON.stringify({ applicationLogin, applicationPassword,streamService,}),
