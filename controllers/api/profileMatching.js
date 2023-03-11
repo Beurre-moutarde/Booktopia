@@ -14,7 +14,8 @@ router.put('/', async (req,res) => {
             in_use_by: false,
             streaming_services_id: findServiceId[0].id
         },
-        attributes: ['application_login','application_password']
+        attributes: ['application_login','application_password'],
+        limit:1
     });
 
     const findNotInUse = await ApplicationDetails.update(
@@ -27,16 +28,6 @@ router.put('/', async (req,res) => {
         }
     )
 
-    console.log(findPassword);
-    //res.send(findNotInUse);
-    // console.log(json(findServiceId));
-    // const newApplicaitonDetail = await ApplicationDetails.create({
-    //   application_login: req.body.applicationLogin,
-    //   application_password: req.body.applicationPassword,
-    //   user_id: req.session.user_id,
-    //   streaming_services_id: findServiceId[0].id ,
-    // });
-    //res.status(200).json(findNotInUse);
     res.status(200).json(findPassword);
   } catch (err) {
     res.status(400).json(err);
