@@ -5,9 +5,9 @@ const userRoutes = require('./userRoutes');
 //const applicationDetailsRoutes = require('./applicationDetailsRoutes');
 const sharePageRoutes = require('./sharePageRoutes');
 
-
+router.use('/sharePage', sharePageRoutes);
 router.use('/users', userRoutes);
-router.use('/sharePage',sharePageRoutes);
+//router.use('/sharePage',sharePageRoutes);
 
 //router.use('/applicationDetails', applicationDetailsRoutes);
 
