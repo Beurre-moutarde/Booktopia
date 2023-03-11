@@ -1,5 +1,5 @@
 {
-  "name": "booktopia",
+  "name": "SwapLogs",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Beurre-moutarde/Booktopia.git"
+    "url": "git+https://github.com/Beurre-moutarde/SwapLogs.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Beurre-moutarde/Booktopia/issues"
+    "url": "https://github.com/Beurre-moutarde/SwapLogs/issues"
   },
-  "homepage": "https://github.com/Beurre-moutarde/Booktopia#readme",
+  "homepage": "https://github.com/Beurre-moutarde/SwapLogs#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
