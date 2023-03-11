@@ -21,10 +21,6 @@ const submitServiceFormHandler = async (event) => {
     }
     };
 
-
-
-
-
 document
 .querySelector('.submit-sharing')
 .addEventListener('submit', submitServiceFormHandler);
