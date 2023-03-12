@@ -31,6 +31,7 @@ router.get('/login', async (req, res) => {
 router.get('/profileMatching', withAuth, async (req, res) => {
     try {
         const applicationDetails = await ApplicationDetails.findAll({
+            attributes:["user_id","streaming_services_id"],
             where: {user_id: req.session.user_id},
             include: [
                 {
@@ -44,23 +45,39 @@ router.get('/profileMatching', withAuth, async (req, res) => {
             ],
         });
 
+        const usingServices = await ApplicationDetails.findAll({
+            attributes:["streaming_services_id","in_use_by"],
+            where: {in_use_by: req.session.user_id},
+            include:[
+                {
+                    model:StreamingServices,
+                    attributes: ['stream_name'],
+                }
+            ]
+        })
 
+        const sharingData = applicationDetails.map((details) => details.get({ plain: true }));
+        const usingServiceData = usingServices.map((details) => details.get({ plain: true }));
+        // res.send(usingServicesData);
         //const abc = {message:"hello"};
-
-        const userData = applicationDetails.map((details) => details.get({ plain: true }));
-
         //userData.push(abc);
 
+        const data = [
+            sharingData,
+            usingServiceData
+        ]
 
-        if (userData.length === 0){
+        //res.send(data);
+
+        if (data.length === 0){
             const message = {message:'please share one service to get other services'};
             res.render('profileMatching',{
-                userData:message,
+                data:message,
                 logged_in:true
             });
         }else{
             res.render('profileMatching',{
-                userData:userData,
+                data:data,
                 logged_in:true
             });
         }
