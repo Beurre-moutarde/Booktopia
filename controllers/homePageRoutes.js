@@ -44,7 +44,13 @@ router.get('/profileMatching', withAuth, async (req, res) => {
             ],
         });
 
+
+        //const abc = {message:"hello"};
+
         const userData = applicationDetails.map((details) => details.get({ plain: true }));
+
+        //userData.push(abc);
+
 
         if (userData.length === 0){
             const message = {message:'please share one service to get other services'};
@@ -58,6 +64,7 @@ router.get('/profileMatching', withAuth, async (req, res) => {
                 logged_in:true
             });
         }
+        
     } catch (err) {
         res.status(500).json(err);
     }
