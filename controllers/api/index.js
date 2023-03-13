@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const userRoutes = require('./userRoutes');
+const userRoutes = require('./UserRoutes');
 // const StreamingServicesRoutes = require('./StreamingServicesRoutes');
 //const applicationDetailsRoutes = require('./applicationDetailsRoutes');
 const sharePageRoutes = require('./sharePageRoutes');
