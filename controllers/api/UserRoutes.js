@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const generatePassword = require('generate-password');
 
 // This route is used to create new user.
 router.post('/', async (req,res) => {
@@ -54,4 +55,29 @@ router.post('/logout', (req, res) => {
     }
   });
   
+  router.post('/', async (req,res) => {
+    try {
+      const { name, email } = req.body;
+      const password = generatePassword.generate({
+        length: 10,
+        numbers: true
+      });
+        
+      const newUser = await User.create({
+        name,
+        email,
+        password
+      });
+      req.session.save(() => {
+        req.session.user_id = newUser.id;
+        req.session.logged_in = true;
+        res.status(200).json(newUser);
+      });
+      
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+  
+
   module.exports = router;
