@@ -33,12 +33,19 @@ ApplicationDetails.init(
         key: 'id'
       },
     },
+    // in_use_by: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false,
+    //   defaultValue: false 
+    // },
     in_use_by: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: false 
+      type: DataTypes.INTEGER,
+      defaultValue: 1,
+      references: {
+        model: 'user',
+        key: 'id'
+      },
     },
-    
   },
   {
     sequelize,

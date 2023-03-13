@@ -18,7 +18,7 @@ router.get('/signup', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-  });
+});
 
 router.get('/login', async (req, res) => {
     try {
@@ -26,29 +26,77 @@ router.get('/login', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-  });
+});
 
 router.get('/profileMatching', withAuth, async (req, res) => {
     try {
-        const userData = await User.findByPk(req.session.user_id,{
-            attributes: { exclude: ['password'] },
+        const applicationDetails = await ApplicationDetails.findAll({
+            attributes:["user_id","streaming_services_id"],
+            where: {user_id: req.session.user_id},
+            include: [
+                {
+                    model: StreamingServices,
+                    attributes: ['stream_name'],
+                },
+                {
+                    model: User,
+                    attributes: ['name'],
+                }
+            ],
         });
 
-        const streamingServices = await StreamingServices.findByPk(req.session.user_id,
-             {include:[{model: ApplicationDetails}]}
-        )
+        const usingServices = await ApplicationDetails.findAll({
+            attributes:["streaming_services_id","in_use_by"],
+            where: {in_use_by: req.session.user_id},
+            include:[
+                {
+                    model:StreamingServices,
+                    attributes: ['stream_name'],
+                }
+            ]
+        })
 
-        const user = userData.get({ plain: true });
-        const stream = streamingServices.get({plain: true});
-        res.render('profileMatching',{
-            ...user,
-            ...stream,
-            logged_in:true
-        });
+        const sharingData = applicationDetails.map((details) => details.get({ plain: true }));
+        const usingServiceData = usingServices.map((details) => details.get({ plain: true }));
+        // res.send(usingServicesData);
+        //const abc = {message:"hello"};
+        //userData.push(abc);
 
+        const data = [
+            sharingData,
+            usingServiceData
+        ]
+
+        //res.send(data);
+
+        if (data.length === 0){
+            const message = {message:'please share one service to get other services'};
+            res.render('profileMatching',{
+                data:message,
+                logged_in:true
+            });
+        }else{
+            res.render('profileMatching',{
+                data:data,
+                logged_in:true
+            });
+        }
+        
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
+router.get('/sharePage', withAuth, async(req,res) => {
+    try {
+        res.render('sharePage');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
 module.exports = router;
+
+
+
