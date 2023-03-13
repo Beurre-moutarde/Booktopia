@@ -22,25 +22,6 @@ if (name && email && password) {
 }
 };
 
-
-const generatePassword = require('generate-password');
-
-const button = document.getElementById('generate-password-button');
-
-button.addEventListener('click', () => {
-  const password = generatePassword.generate({
-    length: 12,
-    numbers: true,
-    symbols: true,
-    uppercase: true,
-    excludeSimilarCharacters: true,
-  });
-
-  console.log(password); // e.g. "1G$5hK#7P9@X"
-  // you can also display the generated password on the screen or use it for other purposes
-});
-
-
 document
 .querySelector('.signup-form')
 .addEventListener('submit', signupFormHandler);
