@@ -1,54 +1,59 @@
-<div class="left-side">
-    <h2>Welcome, {{data.[0].[0].user.name}}</h2>
+<div class="row">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="d-flex align-items-center mb-3">
+                <img src="person-icon.png" alt="Person icon" class="mr-3" style="height: 30px; width: 30px;">
+                <select id="left-service-dropdown" class="form-control mr-3">
+                    <option value="Netflix">Netflix</option>
+                    <option value="AmazonPrime">Amazon Prime Video</option>
+                    <option value="DisneyPlus">Disney+</option>
+                    <option value="HBO">HBO</option>
+                    <option value="ParamountPlus">Paramount+</option>
+                </select>
+                <form class="ml-auto">
+                    <button type="submit" class="btn btn-primary">ADD SUBSCRIPTION</button>
+                </form>
+            </div>
 
-    <form class="form start-sharing">
-        <button type="submit" class="btn btn-primary">ADD SUBSCRIPTION</button>
-    </form>
+            <p>{{sharingData.message}}</p>
 
-    <p>{{sharingData.message}}</p>
+            <h3>The services you are sharing:</h3>
+            <div>
+                {{#each data.[0]}}
+                <h5> {{this.streamingService.stream_name}} </h5>
+                {{/each}}
+            </div>
 
-    <h3>The services you are sharing:</h3>
-    <div>
-        {{#each data.[0]}}
-        <h5> {{this.streamingService.stream_name}}  </h5>
-        {{/each}}
-    </div>
+            <h3>You are now using:</h3>
+            <div>
+                {{#each data.[1]}}
+                <h5>{{this.streamingService.stream_name}}</h5>
+                {{/each}}
+            </div>
+        </div>
 
-    <h3> You are now using:</h3>
-        {{#each data.[1]}}
-        <h5>{{this.streamingService.stream_name}}</h5>
-        {{/each}}
-    <div>
+        <div class="col-md-6">
+            <div class="d-flex align-items-center mb-3">
+                <img src="person-icon.png" alt="Person icon" class="mr-3" style="height: 30px; width: 30px;">
+                <select id="right-service-dropdown" class="form-control mr-3">
+                    <option value="Netflix">Netflix</option>
+                    <option value="AmazonPrime">Amazon Prime Video</option>
+                    <option value="DisneyPlus">Disney+</option>
+                    <option value="HBO">HBO</option>
+                    <option value="ParamountPlus">Paramount+</option>
+                </select>
+                <form class="ml-auto">
+                    <button type="submit" class="btn btn-primary">ADD SUBSCRIPTION</button>
+                </form>
+            </div>
 
+            <div class="mb-3">
+                <input id="application-login" type="text" placeholder="Application Login" class="form-control">
+            </div>
+            <div class="mb-3">
+                <input id="application-password" type="password" placeholder="Application Password"
+                    class="form-control">
+            </div>
+        </div>
     </div>
 </div>
-
-<div class="right-side">
-    <select id="service-dropdown">
-      <option value="Netflix">Netflix</option>
-      <option value="AmazonPrime">Amazon Prime Video</option>
-      <option value="DisneyPlus">Disney+</option>
-      <option value="HBO">HBO</option>
-      <option value="ParamountPlus">Paramount+</option>
-    </select>
-
-    {{!-- <button type="submit" class="select-platform">Search</button> --}}
-
-    <form class="form select-platform">
-        <button type="submit" class="btn btn-primary">Search</button>
-    </form>
-    <div>
-        <input id = "application-login" type="text" placeholder="Application Login">
-        <input id = "application-password" type="text" placeholder="Application password">
-    </div>
-</div>
-
-
-
-{{!-- {{userData.[2].message}} --}}
-
-{{!-- ////////////// --}}
-
-
-
-<script src="/js/profileMatching.js"></script>
