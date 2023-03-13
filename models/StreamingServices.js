@@ -12,7 +12,7 @@ StreamingServices.init(
       autoIncrement: true,
     },
 
-    name: {
+    stream_name: {
       type: DataTypes.STRING,
       allowNull: false
     },

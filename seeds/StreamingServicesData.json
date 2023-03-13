@@ -1,22 +1,22 @@
 [
     {
-        "name": "Netflix"
+        "stream_name": "Netflix"
         
     },
     {
-        "name": "DisneyPlus"
+        "stream_name": "DisneyPlus"
         
     },
     {
-        "name": "HBO"
+        "stream_name": "HBO"
         
     },
     {
-        "name": "AmazonPrime"
+        "stream_name": "AmazonPrime"
         
     },
     {
-        "name": "Spotify"
+        "stream_name": "ParamountPlus"
         
     }
     
