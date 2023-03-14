@@ -7,7 +7,7 @@ const shareServiceFormHandler = async (event) => {
 const selectPlatformFormHandler = async (event) => {
   event.preventDefault();
   // const selectedPlatform = document.querySelector('#platform').value.trim();
-  const selectedPlatform = document.querySelector('#service-dropdown').value; 
+  const selectedPlatform = document.querySelector('#right-service-dropdown').value; 
   // console.log(selectedPlatform);
   if (selectedPlatform){
     const response = await fetch('api/profileMatching',{
