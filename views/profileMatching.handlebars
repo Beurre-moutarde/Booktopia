@@ -4,18 +4,22 @@
             <div class="card p-3">
                 <div class="d-flex align-items-center mb-3">
                     <h3 class="me-3">User A</h3>
+
                     <form class="start-sharing">
                         <button type="submit" class="btn btn-primary btn-sm">ADD SUBSCRIPTION</button>
                     </form>
                     <h2>Welcome, {{data.[0].[0].name}} </h2>
                     <h2>{{data.[1].message}}</h2>
+
                 </div>
                 <p>{{sharingData.message}}</p>
                 <h3>The services you are sharing:</h3>
                 <div>
+
                     {{#if data.[1].length}}
                     <ul>
                         {{#each data.[1]}}
+
                         <li>{{this.streamingService.stream_name}}</li>
                         {{/each}}
                     </ul>
@@ -25,9 +29,11 @@
                 </div>
                 <h3>You are now using:</h3>
                 <div>
+
                     {{#if data.[2].length}}
                     <ul>
                         {{#each data.[2]}}
+
                         <li>{{this.streamingService.stream_name}}</li>
                         {{/each}}
                     </ul>
@@ -40,7 +46,11 @@
         <div class="col-md-6">
             <div class="card p-3">
                 <div class="d-flex align-items-center mb-3">
-                    <h3 class="me-3">User B</h3>
+
+                    <div class="no-wrap">
+                        <h3 class="me-3">User B</h3>
+                    </div>
+
                     <select id="right-service-dropdown" class="form-select">
                         <option value="Netflix">Netflix</option>
                         <option value="AmazonPrime">Amazon Prime Video</option>
@@ -49,9 +59,11 @@
                         <option value="ParamountPlus">Paramount+</option>
                     </select>
 
+
                     <form class="select-platform">
                         <button type="submit" class="btn btn-primary ms-3">Confirm</button>
                     </form>
+
 
                 </div>
                 <div class="mb-3 text-center">
@@ -59,11 +71,15 @@
                     <input id="application-login" type="text" placeholder="Application Login" class="form-control">
                 </div>
                 <div class="mb-3 text-center">
+
                     <input id="application-password" type="text" placeholder="Application Password"
+
                         class="form-control">
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 <script src="/js/profileMatching.js"></script>
+
