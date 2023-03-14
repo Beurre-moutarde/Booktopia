@@ -30,6 +30,12 @@ router.get('/login', async (req, res) => {
 
 router.get('/profileMatching', withAuth, async (req, res) => {
     try {
+        
+        const findUser = await User.findAll({
+            attributes:["name"],
+            where: {id: req.session.user_id},
+        })
+        
         const applicationDetails = await ApplicationDetails.findAll({
             attributes:["user_id","streaming_services_id"],
             where: {user_id: req.session.user_id},
@@ -56,26 +62,23 @@ router.get('/profileMatching', withAuth, async (req, res) => {
             ]
         })
 
+        const loginUser = findUser.map((details) => details.get({ plain: true }));
         const sharingData = applicationDetails.map((details) => details.get({ plain: true }));
         const usingServiceData = usingServices.map((details) => details.get({ plain: true }));
-        // res.send(usingServicesData);
-        //const abc = {message:"hello"};
-        //userData.push(abc);
 
-        const data = [
-            sharingData,
-            usingServiceData
-        ]
-
-        //res.send(data);
-
-        if (data.length === 0){
-            const message = {message:'please share one service to get other services'};
+        if (sharingData.length === 0){
+            const message = {message:'please share your service'};
+            const data = [loginUser,message]
             res.render('profileMatching',{
-                data:message,
+                data:data,
                 logged_in:true
             });
         }else{
+            const data = [
+                loginUser,
+                sharingData,
+                usingServiceData,
+            ]
             res.render('profileMatching',{
                 data:data,
                 logged_in:true

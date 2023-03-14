@@ -15,12 +15,13 @@
                         <button type="submit" class="btn btn-primary ms-3">ADD SUBSCRIPTION</button>
                     </form>
                 </div>
-                <p>{{sharingData.message}}</p>
+                <h2>Welcome, {{data.[0].[0].name}} </h2>
+                <h2>{{data.[1].message}}</h2>
                 <h3>The services you are sharing:</h3>
                 <div>
-                    {{#if data.[0].length}}
+                    {{#if data.[1].length}}
                     <ul>
-                        {{#each data.[0]}}
+                        {{#each data.[1]}}
                         <li>{{this.streamingService.stream_name}}</li>
                         {{/each}}
                     </ul>
@@ -30,9 +31,9 @@
                 </div>
                 <h3>You are now using:</h3>
                 <div>
-                    {{#if data.[1].length}}
+                    {{#if data.[2].length}}
                     <ul>
-                        {{#each data.[1]}}
+                        {{#each data.[2]}}
                         <li>{{this.streamingService.stream_name}}</li>
                         {{/each}}
                     </ul>
