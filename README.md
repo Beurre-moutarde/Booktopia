@@ -41,12 +41,14 @@ UNTILL I disconnect it to go back to the database
 -
 A link to our initial wireframe & diagramming
 https://miro.com/welcomeonboard/RU9IMlpBOFFvY2g3cjB2d2l5SWpZN0djSHJoU1h6b1k2UUNHWUVMRVI2UVZGTkVncmplM2pHbGJBTUVoWFRSeHwzNDU4NzY0NTQ4MDk4MTY2MDU5fDI=?share_link_id=950186769875
-<img src="/public/assets/images/Mirowireframe" width=35%>
+
+<img src="public/assets/images/Mirowireframe" width=35%>
 
 -
 Our deployed application
 - https://swaplogs2.herokuapp.com/
-<img src="/public/assets/images/HerokuSwapLogs" width=40%>
+
+<img src="public/assets/images/HerokuSwapLogs" width=40%>
 
 
 **Credits & References/Resources**
@@ -57,5 +59,5 @@ Our deployed application
 
 This project is for Private use/learning classes and not for commerical or public consumption.Please get in contact if you wish to remove some of the refrences used.
 
-Thank you End.
+Thank you End..
 
