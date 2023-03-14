@@ -66,16 +66,8 @@ router.get('/profileMatching', withAuth, async (req, res) => {
         const sharingData = applicationDetails.map((details) => details.get({ plain: true }));
         const usingServiceData = usingServices.map((details) => details.get({ plain: true }));
 
-        // const data = [
-        //     sharingData,
-        //     usingServiceData,
-        //     loginUser,
-        // ]
-
-        // res.send(data);
-
         if (sharingData.length === 0){
-            const message = {message:'please share one service to get other services'};
+            const message = {message:'please share your service'};
             const data = [loginUser,message]
             res.render('profileMatching',{
                 data:data,
