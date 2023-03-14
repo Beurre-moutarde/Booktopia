@@ -59,5 +59,5 @@ Our deployed application
 
 This project is for Private use/learning classes and not for commerical or public consumption.Please get in contact if you wish to remove some of the refrences used.
 
-Thank you End..
+Thank you End.
 
