@@ -15,18 +15,20 @@
                 </form>
             </div>
 
-            <p>{{sharingData.message}}</p>
+            <p>Hello,{{data.[0].[0].name}}</p>
+
+            <p>{{data.[1].message}}</p>
 
             <h3>The services you are sharing:</h3>
             <div>
-                {{#each data.[0]}}
+                {{#each data.[1]}}
                 <h5> {{this.streamingService.stream_name}} </h5>
                 {{/each}}
             </div>
 
             <h3>You are now using:</h3>
             <div>
-                {{#each data.[1]}}
+                {{#each data.[2]}}
                 <h5>{{this.streamingService.stream_name}}</h5>
                 {{/each}}
             </div>
