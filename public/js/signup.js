@@ -1,7 +1,6 @@
 const signupFormHandler = async (event) => {
     event.preventDefault();
-    
-    
+
     const name = document.querySelector('#fullName').value.trim();
     const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#password').value.trim();
@@ -19,6 +18,15 @@ const signupFormHandler = async (event) => {
             alert(response.statusText);
         }
     }
+
+    // function generatePassword(length) {
+    //     const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    //     let password = "";
+    //     for (let i = 0; i < length; i++) {
+    //       password += charset.charAt(Math.floor(Math.random() * charset.length));
+    //     }
+    //     return password;
+    //   }
     };
     
     document

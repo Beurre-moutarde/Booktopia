@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User,  StreamingServices, ApplicationDetails } = require('../models');
 const withAuth = require('../utils/auth');
+const generatePassword = require('generate-password');
 
 
 //    /homepage route 
@@ -14,8 +15,12 @@ router.get('/', (req, res) => {
 
 router.get('/signup', async (req, res) => {
     try {
-        const Password = generatePassword(12)
-        res.render('signup', {Password});
+        const password = generatePassword.generate({
+            length: 10,
+            numbers: true,
+            symbols: true
+          });
+        res.render('signup', { password });
     } catch (err) {
         res.status(500).json(err);
     }
