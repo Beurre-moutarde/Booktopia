@@ -1,7 +1,6 @@
 const User = require('./User');
 const StreamingServices = require('./StreamingServices');
 const ApplicationDetails = require('./ApplicationDetails');
-const colored = require('colored');
 
 
 User.hasMany(ApplicationDetails, {
@@ -24,6 +23,5 @@ ApplicationDetails.belongsTo(StreamingServices, {
     foreignKey: 'streaming_services_id',
 });
 
-console.log(colored('\nAssociations between models set up successfully!', 'green'));
 
 module.exports = { User, ApplicationDetails, StreamingServices };

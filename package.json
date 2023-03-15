@@ -1,7 +1,7 @@
 {
-  "name": "SwapLogs",
+  "name": "booktopia",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Have both GET and POST routes for retrieving and adding new data.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,23 +9,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Beurre-moutarde/SwapLogs.git"
+    "url": "git+https://github.com/Beurre-moutarde/Booktopia.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Beurre-moutarde/SwapLogs/issues"
+    "url": "https://github.com/Beurre-moutarde/Booktopia/issues"
   },
-  "homepage": "https://github.com/Beurre-moutarde/SwapLogs#readme",
+  "homepage": "https://github.com/Beurre-moutarde/Booktopia#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "express-handlebars": "^7.0.1",
+    "express-handlebars": "^7.0.2",
     "express-session": "^1.17.3",
     "mysql2": "^3.2.0",
-    "sequelize": "^6.29.0",
-    "colored": "^1.3.5"
+    "sequelize": "^6.29.3"
   }
 }
