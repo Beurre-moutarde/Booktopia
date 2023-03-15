@@ -14,7 +14,8 @@ router.get('/', (req, res) => {
 
 router.get('/signup', async (req, res) => {
     try {
-        res.render('signup');
+        const Password = generatePassword(12)
+        res.render('signup', {Password});
     } catch (err) {
         res.status(500).json(err);
     }

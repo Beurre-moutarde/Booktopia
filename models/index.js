@@ -24,4 +24,5 @@ ApplicationDetails.belongsTo(StreamingServices, {
 });
 
 
+
 module.exports = { User, ApplicationDetails, StreamingServices };
