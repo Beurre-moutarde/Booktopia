@@ -9,19 +9,27 @@
                     <form class="start-sharing">
                         <button type="submit" class="btn btn-primary btn-sm">ADD SUBSCRIPTION</button>
                     </form>
-
-                    <h2>{{data.[1].message}}</h2>
-
                 </div>
-                <p>{{sharingData.message}}</p>
-                <h3>The services you are sharing:</h3>
-                <div>
 
+                <h2 id="with-service">{{data.[1].message}}</h2>
+
+                <h3>The services you are sharing:</h3>
+                <div class="sharing-service-list">
                     {{#if data.[1].length}}
                     <ul>
                         {{#each data.[1]}}
+                        <li >
+                            <div>
+                                <section>
+                                     {{this.streamingService.stream_name}}
+                                </section>
+                                    
+                                <form class="sharing-service-list">
+                                    <button type="submit" value = {{this.streamingService.stream_name}} class="btn btn-primary ms-3">Stop Sharing</button>
+                                </form> 
+                            </div>
+                        </li>
 
-                        <li>{{this.streamingService.stream_name}}</li>
                         {{/each}}
                     </ul>
                     {{else}}
@@ -30,12 +38,20 @@
                 </div>
                 <h3>You are now using:</h3>
                 <div>
-
                     {{#if data.[2].length}}
-                    <ul>
+                    <ul class="using-service-list">
                         {{#each data.[2]}}
-
-                        <li>{{this.streamingService.stream_name}}</li>
+                        <li >
+                            <div>
+                                <section>
+                                     {{this.streamingService.stream_name}}
+                                </section>
+                                    
+                                <form class="using-service-list-cancel">
+                                    <button type="submit" value = {{this.streamingService.stream_name}} class="btn btn-primary ms-3">Stop Using</button>
+                                </form> 
+                            </div>
+                        </li>
                         {{/each}}
                     </ul>
                     {{else}}
@@ -44,10 +60,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        
+        {{#if canShare}}
+        <div class="col-md-6" id="service-selection-container">
             <div class="card p-3">
-                <div class="d-flex align-items-center mb-3">
 
+                <div class="d-flex align-items-center mb-3">
                     <div class="no-wrap">
                         <h3 class="me-3">SUBSCRIPTION</h3>
                     </div>
@@ -76,6 +94,7 @@
                 </div>
             </div>
         </div>
+        {{/if}}
     </div>
 </div>
 <footer class="bg-light text-center py-3">

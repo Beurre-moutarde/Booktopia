@@ -1,14 +1,25 @@
+const usingServiceListEl = document.querySelector('.using-service-list');
+const sharingServiceListEl = document.querySelector('.sharing-service-list');
+const withServiceMessage = document.querySelector('#with-service')
+
 const shareServiceFormHandler = async (event) => {
   event.preventDefault();
   document.location.replace('/sharePage');
 };
 
+// if(withServiceMessage.textContent===''){
+//   console.log('has service')
+//   document.getElementById("service-selection-container").style.display = "inline";
+// }else{
+//   console.log('no');
+//   document.getElementById("service-selection-container").style.display = "none";
+// }
+
 
 const selectPlatformFormHandler = async (event) => {
   event.preventDefault();
-  // const selectedPlatform = document.querySelector('#platform').value.trim();
+
   const selectedPlatform = document.querySelector('#right-service-dropdown').value; 
-  // console.log(selectedPlatform);
   if (selectedPlatform){
     const response = await fetch('api/profileMatching',{
       method: 'put',
@@ -23,7 +34,6 @@ const selectPlatformFormHandler = async (event) => {
         document.querySelector('#application-login').value = "Current Not Available";
         document.querySelector('#application-password').value = "Current Not Available";
       } else if (data.hasMessage) {
-        //console.log(data.hasMessage);
         document.querySelector('#application-login').value = data.hasMessage;
         document.querySelector('#application-password').value = data.hasMessage;
       } else {
@@ -33,17 +43,64 @@ const selectPlatformFormHandler = async (event) => {
         document.querySelector('#application-password').value = application_password;
       }
     }else{
-    alert(response.statusText);
+      alert(response.statusText);
     }
   }
 };
   
-  
-  
-  document
-    .querySelector('.start-sharing')
-    .addEventListener('submit', shareServiceFormHandler);
+const stopUsingHandler = async (event) => {
+  event.preventDefault();
+  const stopUsingService = event.target.children[0].value;
+  if (stopUsingService) {
+    const response = await fetch('api/profileMatching/stopUsing',{
+      method: 'put',
+      body: JSON.stringify({ stopUsingService }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (response.ok){
+      document.location.reload();
+      const data =await response.json();
+    }else{
+      alert(response.statusText);
+    }
+  }
+};
 
-  document
-  .querySelector('.select-platform')
-  .addEventListener('submit', selectPlatformFormHandler);
+
+const stopSharingHandler = async (event) => {
+  event.preventDefault();
+  const stopSharingService = event.target.children[0].value;
+  console.log(stopSharingService);
+  if (stopSharingService) {
+    const response = await fetch('api/profileMatching/stopSharing',{
+      method: 'delete',
+      body: JSON.stringify({ stopSharingService }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (response.ok){
+      document.location.reload();
+      const data =await response.json();
+    }else{
+      alert(response.statusText);
+    }
+  }
+};
+  
+document
+  .querySelector('.start-sharing')
+  .addEventListener('submit', shareServiceFormHandler);
+
+document
+.querySelector('.select-platform')
+.addEventListener('submit', selectPlatformFormHandler);
+
+if(usingServiceListEl!==null){
+  usingServiceListEl.addEventListener('submit', stopUsingHandler);
+};
+
+if(sharingServiceListEl!==null){
+  sharingServiceListEl.addEventListener('submit', stopSharingHandler);
+};
+
+
+

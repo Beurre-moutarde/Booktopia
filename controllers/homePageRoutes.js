@@ -67,9 +67,10 @@ router.get('/profileMatching', withAuth, async (req, res) => {
         const usingServiceData = usingServices.map((details) => details.get({ plain: true }));
 
         if (sharingData.length === 0){
-            const message = {message:'please share your service'};
+            const message = {message:'Please share your service'};
             const data = [loginUser,message]
             res.render('profileMatching',{
+                // canShare:true,
                 data:data,
                 logged_in:true
             });
@@ -80,6 +81,7 @@ router.get('/profileMatching', withAuth, async (req, res) => {
                 usingServiceData,
             ]
             res.render('profileMatching',{
+                canShare:true,
                 data:data,
                 logged_in:true
             });
