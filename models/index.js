@@ -3,7 +3,6 @@ const StreamingServices = require('./StreamingServices');
 const ApplicationDetails = require('./ApplicationDetails');
 
 
-
 User.hasMany(ApplicationDetails, {
     foreignkey: 'user_id',
     onDelete: 'CASCADE'
