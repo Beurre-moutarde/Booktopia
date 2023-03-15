@@ -8,6 +8,8 @@ router.use('/sharePage', sharePageRoutes);
 router.use('/users', userRoutes);
 router. use('/profileMatching',profileMatchingRoutes)
 
-
-
+module.exports = router;
+router.use('/sharePage', sharePageRoutes);
+router.use('/users', userRoutes);
+router. use('/profileMatching',profileMatchingRoutes)
 module.exports = router;
