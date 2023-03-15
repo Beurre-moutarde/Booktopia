@@ -49,6 +49,7 @@ Our deployed application
 - https://swaplogs2.herokuapp.com/
 
 <img src="public/assets/images/HerokuSwapLogs.png" width=40%>
+<img src="public/assets/images/SwapLogsUserPage.png" width=40%>
 
 
 **Credits & References/Resources**
