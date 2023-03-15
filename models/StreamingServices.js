@@ -1,6 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class StreamingServices extends Model {}
 
@@ -15,7 +14,7 @@ StreamingServices.init(
 
     stream_name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
   },
   {
@@ -23,10 +22,8 @@ StreamingServices.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'streamingService'
+    modelName: "streamingService",
   }
 );
-
-
 
 module.exports = StreamingServices;
