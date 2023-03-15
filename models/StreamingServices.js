@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const colored = require('colored');
 
 class StreamingServices extends Model {}
 
@@ -26,7 +25,5 @@ StreamingServices.init(
     modelName: 'streamingService'
   }
 );
-
-console.log(colored('StreamingServices model loaded', 'green'));
 
 module.exports = StreamingServices;
