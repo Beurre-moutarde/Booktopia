@@ -48,7 +48,7 @@ router.put('/', async (req,res) => {
         res.status(200).json(findPassword);
 
     }else{
-        res.status(200).json({hasMessage:'Already have this service'});
+        res.status(200).json({hasMessage:'You already have this service'});
     }
     
   } catch (err) {

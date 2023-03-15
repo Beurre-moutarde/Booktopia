@@ -7,15 +7,6 @@ const shareServiceFormHandler = async (event) => {
   document.location.replace('/sharePage');
 };
 
-// if(withServiceMessage.textContent===''){
-//   console.log('has service')
-//   document.getElementById("service-selection-container").style.display = "inline";
-// }else{
-//   console.log('no');
-//   document.getElementById("service-selection-container").style.display = "none";
-// }
-
-
 const selectPlatformFormHandler = async (event) => {
   event.preventDefault();
 
@@ -31,8 +22,8 @@ const selectPlatformFormHandler = async (event) => {
       const data = await response.json();
       console.log(data)
       if (data.length === 0){
-        document.querySelector('#application-login').value = "Current Not Available";
-        document.querySelector('#application-password').value = "Current Not Available";
+        document.querySelector('#application-login').value = "Currently Not Available";
+        document.querySelector('#application-password').value = "Currently Not Available";
       } else if (data.hasMessage) {
         document.querySelector('#application-login').value = data.hasMessage;
         document.querySelector('#application-password').value = data.hasMessage;
@@ -66,7 +57,6 @@ const stopUsingHandler = async (event) => {
   }
 };
 
-
 const stopSharingHandler = async (event) => {
   event.preventDefault();
   const stopSharingService = event.target.children[0].value;
@@ -86,13 +76,9 @@ const stopSharingHandler = async (event) => {
   }
 };
   
-document
-  .querySelector('.start-sharing')
-  .addEventListener('submit', shareServiceFormHandler);
+document.querySelector('.start-sharing').addEventListener('submit', shareServiceFormHandler);
 
-document
-.querySelector('.select-platform')
-.addEventListener('submit', selectPlatformFormHandler);
+document.querySelector('.select-platform').addEventListener('submit', selectPlatformFormHandler);
 
 if(usingServiceListEl!==null){
   usingServiceListEl.addEventListener('submit', stopUsingHandler);
