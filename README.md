@@ -49,6 +49,7 @@ Our deployed application
 - https://swaplogs2.herokuapp.com/
 
 <img src="public/assets/images/HerokuSwapLogs.png" width=40%>
+<img src="public/assets/images/SwapLogsUserPage.png" width=40%>
 
 
 **Credits & References/Resources**
@@ -56,6 +57,13 @@ Our deployed application
 - Website Credits - W3schools
 - Website Credits - StackOverFlow
 - Website Credits - Markdownguide.org
+
+**NPM Package**
+-
+Generate-password 
+Generate Password is a (relatively) extensive library for generating random and unique passwords.
+- https://www.npmjs.com/package/generate-password
+
 
 This project is for Private use/learning classes and not for commerical or public consumption.Please get in contact if you wish to remove some of the refrences used.
 
