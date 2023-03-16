@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class ApplicationDetails extends Model {}
 
@@ -13,37 +13,32 @@ ApplicationDetails.init(
     },
     application_login: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     application_password: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id'
+        model: "user",
+        key: "id",
       },
     },
     streaming_services_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'streamingService',
-        key: 'id'
+        model: "streamingService",
+        key: "id",
       },
     },
-    // in_use_by: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: false,
-    //   defaultValue: false 
-    // },
     in_use_by: {
       type: DataTypes.INTEGER,
       defaultValue: 1,
       references: {
-        model: 'user',
-        key: 'id'
+        model: "user",
+        key: "id",
       },
     },
   },
@@ -52,7 +47,7 @@ ApplicationDetails.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'applicationDetails'
+    modelName: "applicationDetails",
   }
 );
 

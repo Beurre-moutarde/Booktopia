@@ -111,7 +111,13 @@ document
   .querySelector(".select-platform")
   .addEventListener("submit", selectPlatformFormHandler);
 
+document
+  .querySelector(".select-platform")
+  .addEventListener("submit", selectPlatformFormHandler);
 
+if (usingServiceListEl !== null) {
+  usingServiceListEl.addEventListener("submit", stopUsingHandler);
+}
 
 if (sharingServiceListEl !== null) {
   sharingServiceListEl.addEventListener("submit", stopSharingHandler);
