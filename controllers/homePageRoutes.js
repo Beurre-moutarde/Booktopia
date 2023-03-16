@@ -38,11 +38,14 @@ router.get("/login", async (req, res) => {
 // profileMatching route
 router.get("/profileMatching", withAuth, async (req, res) => {
   try {
+    // find the login user name
     const findUser = await User.findAll({
       attributes: ["name"],
       where: { id: req.session.user_id },
     });
 
+    // get user_id and streaming_services_id where the user_id is login user, join table with other two tables
+    // find out the name and stream_name from applicaitondetail table
     const applicationDetails = await ApplicationDetails.findAll({
       attributes: ["user_id", "streaming_services_id"],
       where: { user_id: req.session.user_id },

@@ -26,7 +26,7 @@
                                     
                                 <form class="sharing-service-list">
                                     <button type="submit" value = {{this.streamingService.stream_name}} class="btn btn-primary ms-3">Stop Sharing</button>
-                                </form> 
+                                </form>                                 
                             </div>
                         </li>
 
@@ -50,6 +50,11 @@
                                 <form class="using-service-list-cancel">
                                     <button type="submit" value = {{this.streamingService.stream_name}} class="btn btn-primary ms-3">Stop Using</button>
                                 </form> 
+
+                                <form class="using-service-list-password">
+                                    <button type="submit" value = {{this.streamingService.stream_name}} class="btn btn-primary ms-3">Get Password</button>
+                                </form>
+
                             </div>
                         </li>
                         {{/each}}
@@ -71,6 +76,7 @@
                     </div>
 
                     <select id="right-service-dropdown" class="form-select">
+                        <option value=""></option>
                         <option value="Netflix">Netflix</option>
                         <option value="AmazonPrime">Amazon Prime Video</option>
                         <option value="DisneyPlus">Disney+</option>
